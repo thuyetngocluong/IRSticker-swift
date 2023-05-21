@@ -126,7 +126,7 @@ public class IRStickerView: UIView, UIGestureRecognizerDelegate {
         return stickerControlViewSize / 2
     }
     
-    lazy var contentView: UIImageView = {
+    lazy public var contentView: UIImageView = {
         let imageView = UIImageView.init(frame: CGRect.init(x: stickerHalfControlViewSize, y: stickerHalfControlViewSize, width: frame.size.width, height: frame.size.height))
         return imageView
     }()
