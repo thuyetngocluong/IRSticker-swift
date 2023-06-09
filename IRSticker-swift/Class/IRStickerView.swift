@@ -84,6 +84,9 @@ public extension IRStickerViewDelegate {
 
 public class IRStickerView: UIView, UIGestureRecognizerDelegate {
     
+    public var imagePath: String = ""
+    public var isSticker: Bool = false
+    
     public var stickerMinScale: CGFloat = 0.5
 
     public var stickerMaxScale: CGFloat = 2.0
@@ -375,7 +378,7 @@ extension IRStickerView {
         relocalControlView()
     }
     
-    func relocalControlView() {
+   public func relocalControlView() {
         let originalCenter = self.contentView.center.applying(self.contentView.transform.inverted())
         self.rightBottomControl.center = CGPoint.init(x: originalCenter.x + self.contentView.bounds.size.width / 2.0, y: originalCenter.y + self.contentView.bounds.size.height / 2.0).applying(self.contentView.transform)
         self.leftTopControl.center = CGPoint.init(x: originalCenter.x - self.contentView.bounds.size.width / 2.0, y: originalCenter.y - self.contentView.bounds.size.height / 2.0).applying(self.contentView.transform)
